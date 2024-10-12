@@ -24,6 +24,7 @@ void initializeLEDS(){
 
     setLEDColour(0, 0, 150, 0, 0); //turn on green
     strip.show();
+    delay(500);
 }
 
 //Set the whole strip colour
@@ -38,7 +39,8 @@ void setStripColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w){
 void setLEDColour(int n, uint8_t r, uint8_t g, uint8_t b, uint8_t w){
 
     if( n > NUM_LEDS || n < 0){
-         
+        Serial.println("LED index out of bounds.");
+        return;
     } else{
         strip.setPixelColor(n, strip.Color(r, g, b, w));
         strip.show();
