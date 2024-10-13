@@ -23,7 +23,6 @@ void initializeLEDS(){
     }
 
     setLEDColour(0, 0, 150, 0, 0); //turn on green
-    strip.show();
     delay(500);
 }
 
