@@ -17,20 +17,20 @@ WiFiManager wifiManager;
 
 //Connect to WIFI
 void connectToWifi(){
-
-    if(WiFi.begin(ssid, password) == WL_CONNECTED){
-        Serial.println("Connected to Wi-Fi using saved credentials.");
-    } else{
-        Serial.println("Failed to connect using saved credentials.");
-        
-        if(!wifiManager.autoConnect("LEDify-AP")){
-            Serial.println("Failed to connect... retrying....");
-            delay(3000);
-            ESP.restart();
-        }   
+    for(int i = 0; i < 3; i++){
+        setLEDColour(1, 150, 0, 0, 0); //turn on red
+        delay(500);
+        setLEDColour(1, 0, 0, 0, 0); //turn off
+        delay(500);
     }
 
-    Serial.println("Connected to Wi-Fi");
-    Serial.println("IP Address: ");
-    Serial.println(WiFi.localIP()); // Print the local IP address
+    if(!wifiManager.autoConnect("LEDify-AP")){
+        Serial.println("Failed to connect... retrying....");
+        ESP.restart();
+    } else{
+        Serial.println("Connected to Wi-Fi");
+        setLEDColour(1, 0, 150, 0, 0); //Turn on green for success
+        Serial.println("IP Address: ");
+        Serial.println(WiFi.localIP()); //Print the local IP address
+    }
 }

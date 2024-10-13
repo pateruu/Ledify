@@ -4,6 +4,7 @@
 
 #include "config.h" //stores wifi ssid and password.
 #include "wifi_connection.h"  //Handles the initial Wifi connection
+#include "web_server.h" //handles the web server
 
 
 #include "led_control.h" //Handles all LED control functions
@@ -12,6 +13,7 @@
 
 
 void setup() {
+  delay(3000);
   
   Serial.begin(115200); //Setup serial output to monitor for debugging
 
@@ -23,6 +25,7 @@ void setup() {
   connectToWifi();
   Serial.println("Connected to WiFi");
 
+  setupWebServer();
 
 }
 
