@@ -5,8 +5,23 @@ AsyncWebServer server(80); //Create server instance on port 80
 
 void setupWebServer(){
 
-    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-       request->send(200, "text/plain", "Hello, this is your ESP8266 server!") ;
+    //Initialize the file system
+    if(!LittleFS.begin()){
+        Serial.println("Failed to setup LittleFS.");
+        return;
+    }
+
+    //Send HTML, CSS, and JS files from LittleFS manager to the Web Server.
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest* request){
+        request->send(LittleFS, "/index.html", "text/html");
+    });
+
+    server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest* request){
+        request->send(LittleFS, "/style.css", "text/css");
+    });
+
+    server.on("/script.js", HTTP_GET, [](AsyncWebServerRequest* request){
+        request->send(LittleFS, "/script.js", "application/javascript");
     });
 
     server.begin();
@@ -22,5 +37,4 @@ void setupWebServer(){
     }
     setLEDColour(2, 0, 150, 0, 0); //turn on green
     delay(500);
-
 }

@@ -17,7 +17,6 @@ void connectToWifi(){
         Serial.println("Failed to connect... retrying....");
         ESP.restart();
     } else{
-        Serial.println("Connected to Wi-Fi");
         Serial.println("IP Address: ");
         Serial.println(WiFi.localIP()); //Print the local IP address
     }
