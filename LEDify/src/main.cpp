@@ -13,7 +13,7 @@
 
 
 void setup() {
-  delay(3000);
+  delay(2000);
   
   Serial.begin(115200); //Setup serial output to monitor for debugging
 
