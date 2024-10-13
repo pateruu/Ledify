@@ -1,10 +1,6 @@
-#include <Arduino.h>
 #include <WiFiManager.h>
 #include "config.h"
-
-#include <Adafruit_NeoPixel.h>
-#include <led_control.h>
-
+#include "led_control.h"
 
 #if defined(ESP8266)
 #include <ESP8266WiFi.h>
@@ -25,7 +21,7 @@ void connectToWifi(){
         Serial.println("IP Address: ");
         Serial.println(WiFi.localIP()); //Print the local IP address
     }
-    
+
     for(int i = 0; i < 3; i++){
         setLEDColour(1, 150, 0, 0, 0); //turn on red
         delay(500);

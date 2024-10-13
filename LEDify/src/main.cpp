@@ -1,6 +1,4 @@
 #include <Arduino.h>
-#include <ESPAsyncWebServer.h>
-
 
 #include "config.h" //stores wifi ssid and password.
 #include "wifi_connection.h"  //Handles the initial Wifi connection
@@ -26,6 +24,8 @@ void setup() {
   Serial.println("Connected to WiFi");
 
   setupWebServer();
+
+
 
 }
 
