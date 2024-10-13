@@ -1,8 +1,12 @@
 #include <Arduino.h>
-//#include <Wifi.h>              //Bring this back when switching to ESP32 board.
-#include <ESP8266WiFi.h>
 #include <ESPAsyncWebServer.h>
-#include <Adafruit_NeoPixel.h>  //led functions
+#include <Adafruit_NeoPixel.h>
+
+#if defined(ESP8266)
+#include <ESP8266WiFi.h>
+#elif defined(ESP32)
+#include <WiFi.h>
+#endif
 
 #include "config.h" //stores wifi ssid and password.
 #include "wifi_connection.h"  //Handles the initial Wifi connection
