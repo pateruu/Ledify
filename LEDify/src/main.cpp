@@ -24,9 +24,15 @@ void setup() {
   Serial.println("Connected to WiFi");
 
   setupWebServer();
+  delay(1000);
 
 
-
+  for(int i = 0; i < 3; i++){
+    setLEDColour(i, 0, 0, 0, 150); //turn on white
+    delay(800);
+  }
+  setStripColour(0, 0, 0, 0); //turn off
+  delay(8000);
 }
 
 void loop() {

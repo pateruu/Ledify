@@ -27,7 +27,7 @@ void setupWebServer(){
     server.begin();
     Serial.println("Web Server started: Port 80");
 
-
+    delay(2000);
     for(int i = 0; i < 3; i++){
         setLEDColour(2, 150, 0, 0, 0); //turn on red
         delay(500);
