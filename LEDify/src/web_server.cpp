@@ -24,6 +24,14 @@ void setupWebServer(){
         request->send(LittleFS, "/script.js", "application/javascript");
     });
 
+    //Handle LED Power Button Toggle
+    server.on("/togglePower", HTTP_GET, [] (AsyncWebServerRequest* request){
+        Serial.println("Power toggle request received");
+        togglePowerButton();
+        request->send(200, "application/json", "{\"status\":\"power toggled\"}");
+    });
+
+
     server.begin();
     Serial.println("Web Server started: Port 80");
 
