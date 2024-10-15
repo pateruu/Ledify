@@ -31,6 +31,27 @@ void setupWebServer(){
         request->send(200, "application/json", "{\"status\":\"power toggled\"}");
     });
 
+    //Handle the IROJS Colour Wheel
+    server.on("/setColor", HTTP_GET, [] (AsyncWebServerRequest* request){
+        if (request->hasParam("color")) {
+            String color = request->getParam("color")->value();
+            Serial.println("Color Received:" + color);
+            
+            
+            uint32_t rgbColor = strtol(color.c_str() + 1, NULL, 16); //Convert hex color to RGB color
+            uint8_t r = (rgbColor >> 16) & 0xFF;
+            uint8_t g = (rgbColor >> 8) & 0xFF;
+            uint8_t b = rgbColor & 0xFF;
+
+            setStripColour(r, g, b, 0); // Set the LED strip color based on the RGB values
+
+            request->send(200, "application/json", "{\"status\":\"color set\"}");
+        } else {
+            request->send(400, "application/json", "{\"error\":\"No color provided\"}");
+        }
+    });
+
+
 
     server.begin();
     Serial.println("Web Server started: Port 80");
