@@ -28,6 +28,20 @@ button{
     font-size: 16px;
 }
 
+#defaultPicker{
+    display: flexbox;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Center horizontally within the container*/
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    background-color: white; /* background colour  */
+    border-radius: 10px; /* rounded borders */
+    box-shadow:  0 4px 8px rgba(0,0,0,0.2); /* small shadow */
+
+}
+
 button#power-button{
     background-color: #444;
     color: white;
