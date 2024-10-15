@@ -31,6 +31,11 @@ void setup() {
     setLEDColour(i, 0, 0, 0, 150); //turn on white
     delay(100);
   }
+  currentR = 0;
+  currentG = 0;
+  currentB = 0;
+  currentW = 150;
+  isOn = true;
 }
 
 void loop() {
