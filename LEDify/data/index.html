@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>LEDify</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 </head>
 <body>
-    <button>Click ME!</button>
-    <h1>"TEXT HERE USE THIS AND SHOW THIS"</h1>
-    <h2>more text added before flashing</h2>
+    
+    <div class="container">
+        <h1>LEDify Control Panel</h1>
+
+        <div class="power-control">
+            <button id="power-button">Power</button>
+        </div>
+
+        <div class="control-panel" id="defaultPicker">
+            <label for="color-picker">Pick a Color:</label>
+        </div>
+
+        <div class="brightness-level">
+            <label for="brightness-slider">Brightness:</label>
+            <input type="range" id="brightness-slider" min="0" max="255" value="128">
+        </div>
+
+        <div class="preset-colours">
+            <h2>Preset Colors</h2>
+            <button class="preset-colour" data-colour="#ff0000" style="background-color: #ff0000;">Red</button>
+            <button class="preset-colour" data-colour="#00ff00" style="background-color: #00ff00;">Green</button>
+            <button class="preset-colour" data-colour="#0000ff" style="background-color: #0000ff;">Blue</button>
+            <button class="preset-colour" data-colour="#ffffff" style="background-color: #ffffff;">White</button>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
 </body>
 </html>

@@ -6,6 +6,13 @@
 //Instance of Adafruit_NeoPixel
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, LED_PIN, COLOUR_ORDER + NEO_KHZ800);
 
+uint8_t currentR;
+uint8_t currentG;
+uint8_t currentB;
+uint8_t currentW;
+bool isOn;
+
+
 //Initialize the LED strip.
 void initializeLEDS(){
     strip.begin();
@@ -23,6 +30,7 @@ void initializeLEDS(){
     }
 
     setLEDColour(0, 0, 150, 0, 0); //turn on green
+    
     delay(500);
 }
 
@@ -32,6 +40,12 @@ void setStripColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w){
     strip.setPixelColor(i, strip.Color(r, g, b, w));
   }
   strip.show();
+
+  //Store current colour values.
+  currentR = r;
+  currentG = g;
+  currentB = b;
+  currentW = w;
 }
 
 //Set an individual LED colour
@@ -43,6 +57,27 @@ void setLEDColour(int n, uint8_t r, uint8_t g, uint8_t b, uint8_t w){
     } else{
         strip.setPixelColor(n, strip.Color(r, g, b, w));
         strip.show();
+    }
+}
+
+//Function to turn off the LEDs
+void turnOffLEDS(){
+    for(int i=0; i < NUM_LEDS; i++){
+        strip.setPixelColor(i, strip.Color(0, 0, 0, 0));
+    }   
+    strip.show();
+}
+
+//Toggle LEDs 
+void togglePowerButton(){
+    if(isOn){
+        Serial.println("Turning off LEDs...");
+        turnOffLEDS(); //Turn off the leds
+        isOn = false; //Toggle isOn value.
+    } else{
+        Serial.println("Turning on LEDs...");
+        setStripColour(currentR, currentG, currentB, currentW); //Restore last stored values.
+        isOn = true; //Toggle isOn value.
     }
 }
 

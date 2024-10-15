@@ -27,12 +27,15 @@ void setup() {
   delay(1000);
 
 
-  for(int i = 0; i < 3; i++){
+  for(int i = 0; i < NUM_LEDS; i++){
     setLEDColour(i, 0, 0, 0, 150); //turn on white
-    delay(800);
+    delay(100);
   }
-  setStripColour(0, 0, 0, 0); //turn off
-  delay(8000);
+  currentR = 0;
+  currentG = 0;
+  currentB = 0;
+  currentW = 150;
+  isOn = true;
 }
 
 void loop() {

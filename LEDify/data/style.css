@@ -1,0 +1,66 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20x;
+}
+
+.container{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* center vertically */
+    justify-content: center; /* center horizontally  */
+    height: 100vh; /* full screen height */
+    background-color: #fff; /* background for entire control panel */
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#defaultPicker{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Center horizontally within the container*/
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    background-color: white; /* background colour  */
+    border-radius: 10px; /* rounded borders */
+    box-shadow:  0 4px 8px rgba(0,0,0,0.2); /* small shadow */
+
+}
+
+button#power-button{
+    background-color: #444;
+    color: white;
+}
+
+.preset-colour{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+input[type="color"] {
+    width: 100%;
+    padding: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
