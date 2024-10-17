@@ -12,6 +12,7 @@ uint8_t currentG;
 uint8_t currentB;
 uint8_t currentW;
 bool isOn;
+uint8_t currentBrightness = 255; 
 
 
 //Initialize the LED strip.
@@ -80,4 +81,19 @@ void togglePowerButton(){
         setStripColour(currentR, currentG, currentB, currentW);
         isOn = true;
     }
+}
+
+//Set the brightness level
+void setBrightnessLevel(int brightness){
+    if(brightness < 0){
+        brightness = 0;
+    }
+    if(brightness > 255){
+        brightness = 255;
+    }
+
+    currentBrightness = brightness; //update current brightness value.
+
+    strip.setBrightness(currentBrightness);
+    strip.show();
 }
