@@ -8,6 +8,7 @@ extern uint8_t currentG;
 extern uint8_t currentB;
 extern uint8_t currentW;
 extern bool isOn;
+extern uint8_t currentBrightness;
 
 //Functions
 void initializeLEDS();
