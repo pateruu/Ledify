@@ -7,11 +7,11 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, LED_PIN, COLOUR_ORDER + NEO_KHZ800);
 
 //Define Variables
-uint8_t currentR;
-uint8_t currentG;
-uint8_t currentB;
-uint8_t currentW;
-bool isOn;
+uint8_t currentR = 0;
+uint8_t currentG = 0;
+uint8_t currentB = 0;
+uint8_t currentW = 150;
+bool isOn = true;
 uint8_t currentBrightness = 255; 
 
 

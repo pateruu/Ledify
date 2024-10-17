@@ -26,11 +26,6 @@ void setup() {
   setupWebServer();
   delay(1000);
 
-
-  for(int i = 0; i < NUM_LEDS; i++){
-    setLEDColour(i, 0, 0, 0, 150); //turn on white
-    delay(10);
-  }
   currentR = 0;
   currentG = 0;
   currentB = 0;
