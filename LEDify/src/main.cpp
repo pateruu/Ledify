@@ -29,7 +29,7 @@ void setup() {
 
   for(int i = 0; i < NUM_LEDS; i++){
     setLEDColour(i, 0, 0, 0, 150); //turn on white
-    delay(100);
+    delay(10);
   }
   currentR = 0;
   currentG = 0;
