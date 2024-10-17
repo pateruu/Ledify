@@ -7,11 +7,11 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, LED_PIN, COLOUR_ORDER + NEO_KHZ800);
 
 //Define Variables
-uint8_t currentR;
-uint8_t currentG;
-uint8_t currentB;
-uint8_t currentW;
-bool isOn;
+uint8_t currentR = 0;
+uint8_t currentG = 0;
+uint8_t currentB = 0;
+uint8_t currentW = 150;
+bool isOn = true;
 uint8_t currentBrightness = 255; 
 
 
@@ -37,23 +37,26 @@ void initializeLEDS(){
 
 //Set the whole strip colour
 void setStripColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w){
-  //Set all LEDs to given colour
-  for(int i = 0; i < NUM_LEDS; i++) {
-    strip.setPixelColor(i, strip.Color(r, g, b, w));
-  }
-  strip.show();
+    if(!isOn){ //if strip is off then set isOn to true
+      isOn = true;
+    }
+    //Set all LEDs to given colour
+    for(int i = 0; i < NUM_LEDS; i++) {
+        strip.setPixelColor(i, strip.Color(r, g, b, w));
+    }
+    strip.show();
 
-  //Update current colour values.
-  currentR = r;
-  currentG = g;
-  currentB = b;
-  currentW = w;
+    //Update current colour values.
+    currentR = r;
+    currentG = g;
+    currentB = b;
+    currentW = w;
 }
 
 //Set an individual LED colour
 void setLEDColour(int n, uint8_t r, uint8_t g, uint8_t b, uint8_t w){
     //If given LED is out of bounds
-    if( n > NUM_LEDS || n < 0){
+    if( n >= NUM_LEDS || n < 0){
         Serial.println("LED index out of bounds.");
         return;
     } else{ //Set the pixel colour.
@@ -78,6 +81,7 @@ void togglePowerButton(){
         isOn = false;   
     } else{ //If off then turn on and set isOn to true
         Serial.println("Turning on LEDs...");
+        strip.setBrightness(currentBrightness);
         setStripColour(currentR, currentG, currentB, currentW);
         isOn = true;
     }
@@ -94,6 +98,13 @@ void setBrightnessLevel(int brightness){
 
     currentBrightness = brightness; //update current brightness value.
 
-    strip.setBrightness(currentBrightness);
-    strip.show();
+    if(currentBrightness == 0){
+        turnOffLEDS();
+    } else{
+        strip.setBrightness(currentBrightness);
+        if(isOn){
+            strip.show();
+        }
+    }
+
 }
