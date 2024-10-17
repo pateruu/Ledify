@@ -31,6 +31,28 @@ void setupWebServer(){
         request->send(200, "application/json", "{\"status\":\"power toggled\"}");
     });
 
+    server.on("/setBrightness", HTTP_GET, [](AsyncWebServerRequest* request){
+        
+        if(request->hasParam("brightness")){
+            Serial.println("Set brightness level recieved.");
+            String brightnessValue = request->getParam("brightness")->value();
+            int brightness = brightnessValue.toInt(); //convert brightness value from string to integer
+
+            if(brightness >= 0 && brightness <= 255){
+                setBrightnessLevel(brightness); //call the set brightness function and set
+                request->send(200, "application/json", "{\"status\":\"brightness set\"}");
+                Serial.println("Brightness level received and set.");
+            } else{
+                request->send(400, "application/json", "{\"status\":\"brightness value out of range\"}");
+                Serial.println("Brightness value out of range.");
+            }
+            
+        } else{
+            request->send(400, "application/json", "{\"status\":\"brightness parameter missing\"}");
+            Serial.println("Brightness parameter missing.");
+        }
+    });
+
     //Handle the IROJS Colour Wheel
     server.on("/setColor", HTTP_GET, [] (AsyncWebServerRequest* request){
         if (request->hasParam("color")) {
