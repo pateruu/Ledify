@@ -99,7 +99,7 @@ void setBrightnessLevel(int brightness){
     currentBrightness = brightness; //update current brightness value.
 
     if(currentBrightness == 0){
-        turnOffLEDS();
+        turnOffLEDS(); //Dim the LEDS
     } else{
         strip.setBrightness(currentBrightness);
         if(isOn){
