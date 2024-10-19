@@ -1,2 +1,24 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    let count = 0;
+  
+    function increment() {
+      count += 1;
+    }
+  </script>
+  
+  <main>
+    <h1>LEDify Control Panel</h1>
+    <button on:click={increment}>Clicked {count} times</button>
+  </main>
+  
+  <style>
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  
