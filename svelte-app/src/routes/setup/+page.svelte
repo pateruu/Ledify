@@ -7,7 +7,7 @@
       <li><a href='/animations'>Animations</a></li>
     </ul>
 
-    <h1>Welcome to LEDify</h1>
+    <h1>This is Setup Page</h1>
 </main>
     
 <style>
