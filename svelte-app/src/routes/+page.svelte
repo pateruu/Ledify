@@ -1,24 +1,43 @@
 <script>
-    let count = 0;
+  let navItems = [
+    {name: 'Info', path: '/info'},
+    {name: 'Setup', path: '/setup'},
+    {name: 'Main UI', path: '/main-ui'},
+    {name: 'Colour Buttons', path: '/colour-buttons'},
+    {name: 'Animation', path: '/animations'}
+  ];
+</script>
+
+<main>
+  <ul class="navbar">
+    <li><a href='/info'>Info</a></li>
+    <li><a href='/setup'>Setup</a></li>
+    <li><a href='/main-ui'>Main UI</a></li>
+    <li><a href='/colour-buttons'>Colour Buttons</a></li>
+    <li><a href='/animations'>Animations</a></li>
+  </ul>
+</main>
   
-    function increment() {
-      count += 1;
+<style>
+    .navbar{
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      padding: 1rem;
+      list-style-type: none;
     }
-  </script>
-  
-  <main>
-    <h1>LEDify Control Panel</h1>
-    <button on:click={increment}>Clicked {count} times</button>
-  </main>
-  
-  <style>
-    button {
-      padding: 10px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    
+    .navbar li{
+      margin: 0 10px;
     }
-  </style>
+
+    .navbar li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar li a:hover {
+    color: #ccc;
+  }
+</style>
   
