@@ -35,6 +35,7 @@ Used the **AsyncWebServer** library, to setup a web server to provide an intuiti
 
 ## File System
 Used **LittleFS** for file management. This library stores the HTML, CSS, and JS files on the ESP32/ESP8266 board's flash memory so the board can allow the web server to serve the files directly from the board.
+
 ---
 ## Features
 The web interface offers users the ability to:
