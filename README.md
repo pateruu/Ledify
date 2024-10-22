@@ -43,3 +43,8 @@ The web interface offers users the ability to:
 - **Color Picker**: Choose any color using a color wheel (powered by Iro.js).
 - **Preset Color Buttons**: Quickly select preset colors such as Red, Green, Blue, White, etc.
 - **Animations**: (Planned) Control various LED animations like wave, pulse, and rainbow.
+---
+## Next Steps
+- **Complete Svelte UI**: Continue to refine the UI using Svelte for an even more dynamic and responsive user interface.
+- **Add Guide**: to help users set up and configure the system.
+- **Add More Animations**: Implement a variety of animation controls for the LED strip.
