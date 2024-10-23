@@ -14,9 +14,9 @@ LEDify is a project focused on creating an intuitive control system for smart LE
 ---
 ## Hardware Setup
 This project includes the following setup:
-- ** ESP32/ESP8266 Board (Compatible with both)
-- ** LED Strip (BTF-LIGHTING RGBW Warm White SK6812)
-- ** Power Supply (BTF-LIGHTING AC100-240V to DC5V60A)
+- **ESP32/ESP8266 Board** (Compatible with both)
+- **LED Strip** (BTF-LIGHTING RGBW Warm White SK6812)
+- **Power Supply** (BTF-LIGHTING AC100-240V to DC5V60A)
 ---
 ## Software Setup
 
