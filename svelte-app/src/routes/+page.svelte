@@ -17,12 +17,19 @@
         <img src={logoPath} alt="LEDify Logo" class="logo"/>
     </div>
 
-    <h2 class="main-page-statement">Transform your space with smart LED control—seamless, vibrant lighting at your fingertips.</h2>
+    <h2 class="main-page-statement">Transform your space with vibrant, effortless LED control.</h2>
 
 </main>
     
 <style>
 
+    :global(body){
+        background-color: #2c2c2c;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        margin: 0;
+    }
+    
     .title{
         text-align: center;
         font-size: 4rem;
