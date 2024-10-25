@@ -49,3 +49,14 @@ The web interface offers users the ability to:
 - **Complete Svelte UI**: Continue to refine the UI using Svelte for an even more dynamic and responsive user interface.
 - **Add Guide**: to help users set up and configure the system.
 - **Add More Animations**: Implement a variety of animation controls for the LED strip.
+
+
+## Getting Started
+
+### Installation:
+1. Clone this repository.
+2. Upload the code to your ESP32/ESP8266 board.
+
+---
+
+Feel free to add or modify any section as you continue to work on the project.
