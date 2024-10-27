@@ -3,6 +3,7 @@
 </script>
 
 <main>
+  <!-- Global Navbar -->
   <ul class="navbar">
     <li><a href='/info'>Info</a></li>
     <li><a href='/setup'>Setup</a></li>
@@ -12,10 +13,11 @@
   </ul>
 
     <!-- This is where the content of individual pages will go -->
-    <slot></slot>
+    <slot/>
 </main>
 
 <style>
+  /* Global Styles */
   :global(body){
     background-color: #2c2c2c;
     font-family: Arial, Helvetica, sans-serif;
