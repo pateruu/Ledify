@@ -1,10 +1,12 @@
 <script>
+    import '../../app.css';
     import { Button, GradientButton } from 'flowbite-svelte';
 </script>
 
-<main>
-    <div class="container">
+<main class="container">
+    <div class="flex flex-col items-center gap-4">
         <h1>LEDify Control Panel</h1>
+
 
         <div class="power-control">
             <button id="power-button">Power</button>
