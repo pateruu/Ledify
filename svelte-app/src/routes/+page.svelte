@@ -1,5 +1,7 @@
 <script>
     let logoPath = "/ledify-logo.png"; //path from static folder.
+    import "../app.css";
+
 </script>
 
 <main>

@@ -1,5 +1,5 @@
 <script>
-
+    import { Button, GradientButton } from 'flowbite-svelte';
 </script>
 
 <main>
@@ -33,13 +33,35 @@
             <button class="preset-colour" data-colour="#ff69b4" style="background-color: #ff69b4;">Hot Pink</button>
             <button class="preset-colour" data-colour="#008000" style="background-color: #008000;">Dark Green</button>
             <button class="preset-colour" data-colour="#ffd700" style="background-color: #ffd700;">Gold</button>
-
             
+
+            <GradientButton shadow color="blue">Blue</GradientButton>
+            <GradientButton shadow color="green">Green</GradientButton>
+            <GradientButton shadow color="cyan">Cyan</GradientButton>
+            <GradientButton shadow color="teal">Teal</GradientButton>
+            <GradientButton shadow color="lime">Lime</GradientButton>
+            <GradientButton shadow color="red">Red</GradientButton>
+            <GradientButton shadow color="pink">Pink</GradientButton>
+            <GradientButton shadow color="purple">Purple</GradientButton>
+                
         </div>
     </div>
     <script src="/script.js"></script>
 </main>
     
 <style>
-    
+
+    #defaultPicker{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Center horizontally within the container*/
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    background-color: white; /* background colour  */
+    border-radius: 10px; /* rounded borders */
+    box-shadow:  0 4px 8px rgba(0,0,0,0.2); /* small shadow */
+
+}
 </style>
