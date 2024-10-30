@@ -1,5 +1,7 @@
 <script>
     let logoPath = "/ledify-logo.png"; //path from static folder.
+    import "../app.css";
+
 </script>
 
 <main>
@@ -15,14 +17,7 @@
 </main>
     
 <style>
-
-    :global(body){
-        background-color: #2c2c2c;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        margin: 0;
-    }
-    
+    /* Styles for this page */
     .title{
         text-align: center;
         font-size: 4rem;
@@ -37,7 +32,6 @@
         font-family: Baskerville;
 
     }
-
 
     /*Styles for Logo Image */
     .logo{
