@@ -41,8 +41,8 @@
 	</Navbar>
 
 	<!-- Main Content Area -->
-	<main class="pt-16 min-h-screen flex items-center justify-center transition-colors duration-500">
-		<div class="text-center mt-20 mb-4">
+	<main class="pt-12 min-h-screen flex items-center justify-center transition-colors duration-500">
+		<div class="text-center mt-10 mb-4">
 			<slot />
 		</div>
 	</main>
