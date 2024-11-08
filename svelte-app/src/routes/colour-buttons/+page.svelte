@@ -6,15 +6,25 @@
 <main>
 
     <div class="button-container">
-        <CustomButton color="blue" shadow>Blue</CustomButton>
-        <CustomButton color="green" shadow>Green</CustomButton>
-        <CustomButton color="cyan" shadow>Cyan</CustomButton>
-        <CustomButton color="teal" shadow>Teal</CustomButton>
-        <CustomButton color="lime" shadow>Lime</CustomButton>
         <CustomButton color="red" shadow>Red</CustomButton>
+        <CustomButton color="green" shadow>Green</CustomButton>
+        <CustomButton color="blue" shadow>Blue</CustomButton>
+        <CustomButton color="white" shadow>White</CustomButton>
+        <CustomButton color="lavender" shadow>Lavender</CustomButton>
         <CustomButton color="purple" shadow>Purple</CustomButton>
-        <CustomButton color="orange" shadow>Orange</CustomButton>
+        <CustomButton color="violet" shadow>Violet</CustomButton>
         <CustomButton color="indigo" shadow>Indigo</CustomButton>
+        <CustomButton color="pink" shadow>Pink</CustomButton>
+        <CustomButton color="lime" shadow>Lime</CustomButton>
+        <CustomButton color="darkGreen" shadow>Dark Green</CustomButton>
+        <CustomButton color="orange" shadow>Orange</CustomButton>
+        <CustomButton color="aquamarine" shadow>Aquamarine</CustomButton>
+        <CustomButton color="turquoise" shadow>Turquoise</CustomButton>
+        <CustomButton color="cyan" shadow>Cyan</CustomButton>
+        <CustomButton color="navy" shadow>Navy</CustomButton>
+        <CustomButton color="yellow" shadow>Yellow</CustomButton>
+        <CustomButton color="gold" shadow>Gold</CustomButton>
+        
     </div>
 
 </main>
