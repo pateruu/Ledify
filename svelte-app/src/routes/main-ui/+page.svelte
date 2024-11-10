@@ -4,8 +4,8 @@
 </script>
 
 <main class="container">
-    <div class="flex flex-col items-center gap-4">
-        <h1>LEDify Control Panel</h1>
+    <div class="flex flex-col items-center gap-6">
+        <h1 class="control-panel-title">LEDify Control Panel</h1>
 
         <div class="power-control">
             <button id="power-button">Power</button>
@@ -16,8 +16,8 @@
         </div>
 
         <div class="brightness-level">
-            <label for="brightness-slider">Brightness:</label>
-            <input type="range" id="brightness-slider" min="0" max="255" value="128">
+            <label for="brightness-slider" class="slider-label">Brightness:</label>
+            <input type="range" id="brightness-slider" min="0" max="255" value="128" class="styled-slider">
         </div>
 
         <div class="preset-colours">
@@ -38,6 +38,43 @@
 </main>
 
 <style>
+    .control-panel-title{
+        font-size: 3rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .power-control{
+        padding: 10px 30px;
+        background:#3b82f6;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+    }
+
+    .power-control:hover{
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
+
+    .slider-label {
+        font-size: 1.2rem;
+        color: #111827;
+        margin-right: 0.5rem;
+    }
+
+    .styled-slider {
+        width: 200px;
+        accent-color: #2563eb;
+        border-radius: 5px;
+    }
+
     #defaultPicker {
         display: flex;
         justify-content: center;
