@@ -1,5 +1,5 @@
 <main class="info-container">
-    <h1>About LEDify</h1>
+    <h1 class="main-title">About LEDify</h1>
     <p>LEDify is a customizable LED control project that allows users to control LED colors, brightness, and patterns wirelessly through a web interface. This project integrates a web server running on an ESP32 microcontroller, with a Svelte-based UI for an intuitive control experience.</p>
     
     <section class="features">
@@ -31,18 +31,19 @@
         max-width: 800px;
         margin: 2rem auto;
         padding: 1rem 2rem;
-        color: #f0f0f0;
         line-height: 1.6;
     }
 
+    .main-title{
+        font-size: 2rem;
+    }
+
     h1, h2 {
-        color: #fffa;
         margin-bottom: 1rem;
     }
 
     p, ul {
         margin-bottom: 1.5rem;
-        color: #cccccc;
     }
 
     ul {
@@ -51,7 +52,7 @@
     }
 
     .features, .how-to-use, .credits {
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 
     h2 {

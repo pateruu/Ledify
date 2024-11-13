@@ -41,7 +41,6 @@
     .control-panel-title{
         font-size: 3rem;
         font-weight: bold;
-        color: #333;
         margin-bottom: 1rem;
         text-align: center;
     }
