@@ -1,12 +1,11 @@
 <script>
     import '../../app.css';
-    import { Button, GradientButton } from 'flowbite-svelte';
+    import CustomButton from '../colour-buttons/CustomButton.svelte';
 </script>
 
 <main class="container">
-    <div class="flex flex-col items-center gap-4">
-        <h1>LEDify Control Panel</h1>
-
+    <div class="flex flex-col items-center gap-6">
+        <h1 class="control-panel-title">LEDify Control Panel</h1>
 
         <div class="power-control">
             <button id="power-button">Power</button>
@@ -17,53 +16,82 @@
         </div>
 
         <div class="brightness-level">
-            <label for="brightness-slider">Brightness:</label>
-            <input type="range" id="brightness-slider" min="0" max="255" value="128">
+            <label for="brightness-slider" class="slider-label">Brightness:</label>
+            <input type="range" id="brightness-slider" min="0" max="255" value="128" class="styled-slider">
         </div>
 
         <div class="preset-colours">
-            <h2>Preset Colors</h2>
-            <button class="preset-colour" data-colour="#ff0000" style="background-color: #ff0000;">Red</button>
-            <button class="preset-colour" data-colour="#00ff00" style="background-color: #00ff00;">Green</button>
-            <button class="preset-colour" data-colour="#0000ff" style="background-color: #0000ff;">Blue</button>
-            <button class="preset-colour" data-colour="#ffffff" style="background-color: #ffffff;">White</button>
-            <button class="preset-colour" data-colour="#800080" style="background-color: #800080;">Purple</button>
-            <button class="preset-colour" data-colour="#ffff00" style="background-color: #ffff00;">Yellow</button>
-            <button class="preset-colour" data-colour="#ffa500" style="background-color: #ffa500;">Orange</button>
-            <button class="preset-colour" data-colour="#ff1493" style="background-color: #ff1493;">Pink</button>
-            <button class="preset-colour" data-colour="#00ffff" style="background-color: #00ffff;">Cyan</button>
-            <button class="preset-colour" data-colour="#ff69b4" style="background-color: #ff69b4;">Hot Pink</button>
-            <button class="preset-colour" data-colour="#008000" style="background-color: #008000;">Dark Green</button>
-            <button class="preset-colour" data-colour="#ffd700" style="background-color: #ffd700;">Gold</button>
-            
-
-            <GradientButton shadow color="blue">Blue</GradientButton>
-            <GradientButton shadow color="green">Green</GradientButton>
-            <GradientButton shadow color="cyan">Cyan</GradientButton>
-            <GradientButton shadow color="teal">Teal</GradientButton>
-            <GradientButton shadow color="lime">Lime</GradientButton>
-            <GradientButton shadow color="red">Red</GradientButton>
-            <GradientButton shadow color="pink">Pink</GradientButton>
-            <GradientButton shadow color="purple">Purple</GradientButton>
-                
+            <h2>Preset Colors</h2>            
+            <CustomButton color="red" customClass="main-ui" shadow>Red</CustomButton>
+            <CustomButton color="green" customClass="main-ui" shadow>Green</CustomButton>
+            <CustomButton color="blue" customClass="main-ui" shadow>Blue</CustomButton>
+            <CustomButton color="white" customClass="main-ui" shadow>White</CustomButton>
+            <CustomButton color="purple" customClass="main-ui" shadow>Purple</CustomButton>
+            <CustomButton color="yellow" customClass="main-ui" shadow>Yellow</CustomButton>
+            <CustomButton color="orange" customClass="main-ui" shadow>Orange</CustomButton>
+            <CustomButton color="pink" customClass="main-ui" shadow>Pink</CustomButton>
+            <CustomButton color="cyan" customClass="main-ui" shadow>Cyan</CustomButton>
+            <CustomButton color="darkGreen" customClass="main-ui" shadow>Dark Green</CustomButton>
+            <CustomButton color="gold" customClass="main-ui" shadow>Gold</CustomButton>
         </div>
     </div>
-    <script src="/script.js"></script>
 </main>
-    
+
 <style>
+    .control-panel-title{
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
 
-    #defaultPicker{
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin: 0 auto; /* Center horizontally within the container*/
-    padding: 20px;
-    width: 100%;
-    max-width: 300px;
-    background-color: white; /* background colour  */
-    border-radius: 10px; /* rounded borders */
-    box-shadow:  0 4px 8px rgba(0,0,0,0.2); /* small shadow */
+    .power-control{
+        padding: 10px 30px;
+        background:#3b82f6;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+    }
 
-}
+    .power-control:hover{
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
+
+    .slider-label {
+        font-size: 1.2rem;
+        color: #111827;
+        margin-right: 0.5rem;
+    }
+
+    .styled-slider {
+        width: 200px;
+        accent-color: #2563eb;
+        border-radius: 5px;
+    }
+
+    #defaultPicker {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%;
+        max-width: 300px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .preset-colours {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+    }
 </style>
