@@ -1,10 +1,10 @@
 <script lang="ts">
-    export let color = 'blue'; // Default color
+    export let color = 'blue'; //Default color
     export let shadow = true;
     export let hoverEffect = true;
-    export let customClass: string = ''; // Custom class prop for specific styles
+    export let customClass: string = ''; //Custom class prop for specific styles
 
-    // Define color classes for gradients
+    //Define color classes for gradients
     const colourClasses = {
         red: "text-white bg-gradient-to-r from-red-500 to-red-700",
         green: "text-white bg-gradient-to-r from-green-500 to-green-700",
@@ -25,9 +25,28 @@
         darkGreen: "text-white bg-gradient-to-r from-green-800 to-green-900",
         turquoise: "text-white bg-gradient-to-r from-teal-500 to-teal-600",
     };
-
-    // Set default gradient color class
+    
+    //Set default gradient color class
     let gradientClass = colourClasses[color] || colourClasses.blue;
+
+    //Function to handle button click and send an asynchronous GET request
+    async function handleClick() {
+        try {
+            //Send a GET request to the ESP32 server with the color parameter
+            const response = await fetch(`http://esp32.local/setColor?color=${color}`, {
+                method: 'GET',
+            });
+
+            //Handle the response
+            if (response.ok) {
+                console.log(`Color ${color} set successfully on the server.`);
+            } else {
+                console.error(`Failed to set color ${color}. Server responded with status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error(`Error setting color ${color}:`, error);
+        }
+    }
 </script>
 
 <button 
