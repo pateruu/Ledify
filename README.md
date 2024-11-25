@@ -50,7 +50,7 @@ The web interface offers users the ability to:
 - **Add Guide**: to help users set up and configure the system.
 - **Add More Animations**: Implement a variety of animation controls for the LED strip.
 
-
+---
 ## Getting Started
 
 ### Installation:
