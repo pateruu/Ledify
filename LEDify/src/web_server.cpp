@@ -20,8 +20,8 @@ void setupWebServer(){
         request->send(LittleFS, "/style.css", "text/css");
     });
 
-    server.on("/script.js", HTTP_GET, [](AsyncWebServerRequest* request){
-        request->send(LittleFS, "/script.js", "application/javascript");
+    server.on("/bundle.js", HTTP_GET, [](AsyncWebServerRequest* request) {
+        request->send(LittleFS, "/bundle.js", "application/javascript");
     });
 
     //Handle LED Power Button Toggle
@@ -53,7 +53,7 @@ void setupWebServer(){
         }
     });
 
-    //Handle the IROJS Colour Wheel
+    //Set Colour
     server.on("/setColor", HTTP_GET, [] (AsyncWebServerRequest* request){
         if (request->hasParam("color")) {
             String color = request->getParam("color")->value();
