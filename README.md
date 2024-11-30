@@ -49,18 +49,29 @@ Used **LittleFS** for file management. This library stores the HTML, CSS, and JS
 
 ---
 ## Features
-The web interface offers users the ability to:
-- **Toggle Power**: Turn the LED strip on or off.
-- **Adjust Brightness**: Control the brightness of the LEDs with a slider.
-- **Color Picker**: Choose any color using a color wheel (powered by Iro.js).
-- **Preset Color Buttons**: Quickly select preset colors such as Red, Green, Blue, White, etc.
-- **Animations**: (Planned) Control various LED animations like wave, pulse, and rainbow.
+
+The current iteration of LEDify provides:
+
+- **Power Control**  
+  - Toggle the LED strip on/off via the web interface.
+- **Brightness Adjustment**  
+  - Adjust LED brightness with a responsive slider.
+- **Color Selection**  
+  - Use an interactive color wheel (powered by Iro.js) to pick any color.
+- **Preset Colors**  
+  - Quickly switch to popular colors like Red, Green, Blue, and White.
+- **Animations** *(Planned)*  
+  - Control dynamic animations such as waves, pulses, and rainbows.
 ---
 ## Next Steps
-- **Complete Svelte UI**: Continue to refine the UI using Svelte for an even more dynamic and responsive user interface.
-- **Add Guide**: to help users set up and configure the system.
-- **Add More Animations**: Implement a variety of animation controls for the LED strip.
-
+- **Expand UI with Svelte**  
+  - Continue refining the svelte web interface for a polished and responsive experience.
+- **Animation Support**  
+  - Add animations for more dynamic lighting options.
+- **Comprehensive User Guide**  
+  - Include step-by-step instructions for hardware assembly and software setup.
+- **Mobile Optimization**  
+  - Optimize the web interface for better performance on mobile devices.
 ---
 ## Getting Started
 
