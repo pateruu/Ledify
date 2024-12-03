@@ -31,27 +31,14 @@ This project includes the following setup:
 
 ## Software Setup
 
-## LED Control
-Utilized the **Adafruit NeoPixel** library to control the LED strip. Custom functions have been written to handle:
-- Power Toggling
-- Brightness Control
-- Colour changes via a colour picker or preset colour buttons
-- Animations for the LED strip (Need to Implement Still)
+### Libraries Used:
+- **Adafruit NeoPixel**: For precise LED control.
+- **tzapu/WiFiManager**: Simplifies Wi-Fi setup.
+- **AsyncWebServer**: Provides a robust web server for the user interface.
+- **LittleFS**: Efficient file system for storing HTML, CSS, and JavaScript files directly on the ESP board.
 
-### Wi-Fi Connection
-The project uses a **WiFi Manager** library: **tzapu/WiFiManager**, to simplify the connection process, allowing the board to connect to a Wi-Fi network before starting the web server.
-
-## Web Server
-Used the **AsyncWebServer** library, to setup a web server to provide an intuitive user interface for controlling the LEDs. Users can access the web interface over a Wi-Fi connection established by the ESP32/ESP8266 board.
-
-## File System
-Used **LittleFS** for file management. This library stores the HTML, CSS, and JS files on the ESP32/ESP8266 board's flash memory so the board can allow the web server to serve the files directly from the board.
-
----
 ## Features
-
 The current iteration of LEDify provides:
-
 - **Power Control**  
   - Toggle the LED strip on/off via the web interface.
 - **Brightness Adjustment**  
